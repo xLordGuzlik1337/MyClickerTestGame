@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Рейтинг кликов</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 20px;
+    }
+    .leaderboard {
+      margin-top: 20px;
+    }
+    .leaderboard table {
+      width: 50%;
+      margin: auto;
+      border-collapse: collapse;
+    }
+    .leaderboard th, .leaderboard td {
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Кликер-игра с рейтингом</h1>
+  
+  <!-- Форма для регистрации -->
+  <div>
+    <h2>Регистрация</h2>
+    <input type="email" id="email" placeholder="Введите email"><br><br>
+    <input type="password" id="password" placeholder="Введите пароль"><br><br>
+    <input type="text" id="usernameInput" placeholder="Введите ваш ник"><br><br>
+    <button id="registerButton">Зарегистрироваться</button>
+  </div>
+
+  <!-- Форма для входа -->
+  <div>
+    <h2>Вход</h2>
+    <input type="email" id="loginEmail" placeholder="Введите email"><br><br>
+    <input type="password" id="loginPassword" placeholder="Введите пароль"><br><br>
+    <button id="loginButton">Войти</button>
+  </div>
+
+  <!-- Основной контент -->
+  <p>Ваш ник: <span id="username"></span></p>
+  <button id="clickButton">Кликнуть</button>
+  <p>Ваши клики: <span id="myClicks">0</span></p>
+
+  <div class="leaderboard">
+    <h2>Рейтинг</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Ник</th>
+          <th>Клики</th>
+        </tr>
+      </thead>
+      <tbody id="leaderboard"></tbody>
+    </table>
+  </div>
+
+  <script type="module" src="script.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.17.2/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js"></script>
+</body>
+</html>
